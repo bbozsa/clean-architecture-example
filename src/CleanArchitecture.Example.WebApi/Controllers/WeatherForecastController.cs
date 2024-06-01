@@ -19,15 +19,20 @@ namespace CleanArchitecture.Example.WebApi.Controllers
         }
 
         [HttpGet(Name = "GetWeatherForecast")]
-        public IEnumerable<WeatherForecast> Get()
+        public async Task<string> Get(
+            [FromServices] Application.UseCases.Example.UseCase useCase)
         {
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+            var request = new Application.UseCases.Example.Request
             {
-                Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-                TemperatureC = Random.Shared.Next(-20, 55),
-                Summary = Summaries[Random.Shared.Next(Summaries.Length)]
-            })
-            .ToArray();
+                SomeNumber = 30,
+                SomeString = "Hello"
+            };
+
+            await useCase.Handle(request);
+
+
+
+            return "ok";
         }
     }
 }

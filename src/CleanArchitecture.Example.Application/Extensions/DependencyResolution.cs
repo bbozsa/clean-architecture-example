@@ -1,7 +1,7 @@
 ﻿using CleanArchitecture.Example.Application.Common.Boundaries;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace CleanArchitecture.Example.Application.Common.Extensions
+namespace CleanArchitecture.Example.Application.Extensions
 {
     public static class DependencyResolution
     {

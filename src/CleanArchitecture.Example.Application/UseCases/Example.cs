@@ -3,7 +3,7 @@ using FluentValidation;
 
 namespace CleanArchitecture.Example.Application.UseCases
 {
-    public static class ExampleUseCase
+    public static class Example
     {
         public class Request : IRequest
         {

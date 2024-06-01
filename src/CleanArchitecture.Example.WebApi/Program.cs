@@ -1,6 +1,12 @@
+using CleanArchitecture.Example.Application.Extensions;
+using CleanArchitecture.Example.WebApi.Extensions;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.RegisterApplication();
+builder.Services.RegisterInfrastructure();
+builder.Services.RegisterPresentation();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
